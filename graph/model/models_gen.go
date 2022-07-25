@@ -2,6 +2,22 @@
 
 package model
 
+type Event struct {
+	ID        string `json:"id"`
+	CreatedAt string `json:"createdAt"`
+	Source    string `json:"source"`
+	Category  string `json:"category"`
+	Message   string `json:"message"`
+	Severity  string `json:"severity"`
+}
+
+type NewEvent struct {
+	Source   string `json:"source"`
+	Category string `json:"category"`
+	Message  string `json:"message"`
+	Severity string `json:"severity"`
+}
+
 type NewTodo struct {
 	Text   string `json:"text"`
 	UserID string `json:"userId"`

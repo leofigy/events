@@ -2,11 +2,22 @@
 #
 # https://gqlgen.com/getting-started/
 
+scalar DateTime
+
 type Todo {
   id: ID!
   text: String!
   done: Boolean!
   user: User!
+}
+
+type Event {
+  id: ID!
+  createdAt: DateTime!
+  source: String!
+  category: String!
+  message: String!
+  severity: String!
 }
 
 type User {
@@ -16,11 +27,19 @@ type User {
 
 type Query {
   todos: [Todo!]!
+  events: [Event!]!
 }
 
 input NewTodo {
   text: String!
   userId: String!
+}
+
+input NewEvent {
+  source: String!
+  category: String!
+  message: String!
+  severity: String!
 }
 
 type Mutation {
