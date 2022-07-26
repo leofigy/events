@@ -44,4 +44,5 @@ input NewEvent {
 
 type Mutation {
   createTodo(input: NewTodo!): Todo!
+  createEvent(input: NewEvent): Event!
 }
